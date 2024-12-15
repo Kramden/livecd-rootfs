@@ -814,7 +814,7 @@ case $PROJECT in
 				    amd64)
 					# the enhanced-secureboot layer, contains all packages for the enhanced secureboot install
 					add_package minimal.enhanced-secureboot cryptsetup boot-managed-by-snapd
-					add_package minimal.standard.enhanced-secureboot cryptsetup boot-managed-by-snapd
+					#add_package minimal.standard.enhanced-secureboot cryptsetup boot-managed-by-snapd
 					# We only need english
 					#derive_language_layers minimal.enhanced-secureboot desktop-minimal desktop-default-languages "$seeded_langs"
 					#derive_language_layers minimal.standard.enhanced-secureboot desktop desktop-default-languages "$seeded_langs"
@@ -827,19 +827,19 @@ case $PROJECT in
 						    path: minimal.enhanced-secureboot.squashfs
 						    snapd_system_label: enhanced-secureboot-desktop
 					EOF
-					cat <<-EOF > config/minimal.standard.enhanced-secureboot.catalog-in.yaml
-						id: ubuntu-desktop
-						variations:
-						  standard:
-						    path: minimal.standard.squashfs
-						  enhanced-secureboot:
-						    path: minimal.standard.enhanced-secureboot.squashfs
-						    snapd_system_label: enhanced-secureboot-desktop
-					EOF
+					#cat <<-EOF > config/minimal.standard.enhanced-secureboot.catalog-in.yaml
+					#	id: ubuntu-desktop
+					#	variations:
+					#	  standard:
+					#	    path: minimal.standard.squashfs
+					#	  enhanced-secureboot:
+					#	    path: minimal.standard.enhanced-secureboot.squashfs
+					#	    snapd_system_label: enhanced-secureboot-desktop
+					#EOF
 					;;
 				esac
-				add_package minimal.standard kramden-desktop
-				add_snap minimal.standard core22 snapd firefox firmware-updater gnome-42-2204 bare gtk-common-themes snap-store snapd-desktop-integration gnome-2048 gnome-chess gnome-dictionary gnome-nibbles frogsquash gnome-weather iagno mc-installer quadrapassel
+				add_package minimal kramden-desktop
+				add_snap minimal core22 snapd firefox firmware-updater gnome-42-2204 gnome-46-2404 mesa-2404 bare gtk-common-themes snap-store snapd-desktop-integration gnome-2048 gnome-chess gnome-dictionary gnome-nibbles frogsquash gnome-weather iagno mc-installer quadrapassel
 				#add_snap minimal.standard core22 snapd firefox firmware-updater gnome-42-2204 bare gtk-common-themes snap-store snapd-desktop-integration core18 core20 gnome-3-38-2004 gnome-2048 gnome-chess gnome-dictionary gnome-nibbles frogsquash gnome-weather iagno mc-installer quadrapassel spotify vlc zoom-client
 
 				;;
