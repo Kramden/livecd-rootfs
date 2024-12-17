@@ -802,7 +802,8 @@ case $PROJECT in
 				HAS_MINIMAL=yes
 				MINIMAL_DESC="A minimal but usable Ubuntu Desktop."
 				MINIMAL_IS_DEFAULT=yes
-				HAS_DEFAULT_LANGUAGES=yes
+				MINIMAL_TASKS="ubuntu-desktop-minimal"
+				HAS_DEFAULT_LANGUAGES=no
 				LANGUAGE_BASE=desktop
 				KERNEL_FLAVOURS='generic-hwe-24.04'
 				COMPONENTS='main restricted universe multiverse'
